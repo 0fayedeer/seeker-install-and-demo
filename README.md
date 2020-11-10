@@ -1,6 +1,6 @@
 # seeker-install-and-demo
-[TOC]
-
+* TOC
+{:toc}
 - [原项目链接](https://github.com/thewhiteh4t/seeker)本文档由原项目翻译而来并做了部分修改。
 - seeker是一个概念验证工具，仅用于教育目的。
 
