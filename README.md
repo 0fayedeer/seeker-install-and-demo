@@ -1,4 +1,6 @@
 # seeker-install-and-demo
+[TOC]
+
 - [原项目链接](https://github.com/thewhiteh4t/seeker)本文档由原项目翻译而来并做了部分修改。
 - seeker是一个概念验证工具，仅用于教育目的。
 
@@ -87,11 +89,11 @@ sudo ./arch_install.sh
 
 下面是在archlinux环境下的演示，其他环境除了安装时有些细微的区别，使用起来都一样
 
-#### **安装**
+### **安装**
 
 ![image](https://cdn.jsdelivr.net/gh/chrysoskun/chrysoskun.github.io/assets/img/seeker/image01.png)
 
-#### **使用**
+### **使用**
 
 启动
 
@@ -101,7 +103,7 @@ python3 seeker.py -t manual
 
 ![image](https://cdn.jsdelivr.net/gh/chrysoskun/chrysoskun.github.io/assets/img/seeker/image02.png)
 
-##### 选择模板和输入最后要转到的地址
+选择模板和输入最后要转到的地址
 
 ![image](https://cdn.jsdelivr.net/gh/chrysoskun/chrysoskun.github.io/assets/img/seeker/image03.png)
 
@@ -109,7 +111,7 @@ python3 seeker.py -t manual
 
 ![image](https://cdn.jsdelivr.net/gh/chrysoskun/chrysoskun.github.io/assets/img/seeker/image04.png)
 
-##### 打开另一个终端，启动ngrok
+打开另一个终端，启动ngrok
 
 ```
 ngrok http 8080
@@ -131,7 +133,7 @@ ngrok http 8080
 
 ![image](https://cdn.jsdelivr.net/gh/chrysoskun/chrysoskun.github.io/assets/img/seeker/image08.png)
 
-##### 当目标成功跳转到你之前输入的地址时，在seeker界面会返回介绍中提到的信息
+**当目标成功跳转到你之前输入的地址时，在seeker界面会返回介绍中提到的信息**
 
 这是在没有GPS硬件的电脑上点开链接返回的信息,位置是根据ip定位（相关隐私信息已做处理）
 
