@@ -1,4 +1,9 @@
 # seeker-install-and-demo
+
+
+
+
+
 - [原项目链接](https://github.com/thewhiteh4t/seeker)本文档由原项目翻译而来并做了部分修改。
 - seeker是一个概念验证工具，仅用于教育目的。
 
@@ -34,7 +39,7 @@ Seeker背后的概念很简单，就像我们用钓鱼网页来获取凭证一�
 ## Seeker与IP GeoLocation的不同
 
 - 其他工具和服务提供的IP地理位置完全不准确，并且不提供目标的位置，而是ISP的大概位置。
-- Seeker使用HTML API并获取位置许可，然后使用设备中提供的GPS硬件获取经度和纬度，因此，如果GPS硬件（例如在笔记本电脑上）不存在，则Seeker可以最好地与智能手机配合使用，例如Seeker会回退到IP Geolocation否则它将查找缓存的坐标。
+- Seeker使用HTML API并获取位置许可，然后使用设备中提供的GPS硬件获取经度和纬度，因此，如果GPS硬件（例如在笔记本电脑上）不存在，Seeker会回退到IP Geolocation获取坐标。所以Seeker可以最好地与智能手机配合使用。
 - 一般情况下，如果用户接受位置渗透，则接收到的信息的精度约为30米，精度取决于设备。
 
 ## 模板
@@ -81,19 +86,64 @@ chmod 777 arch_install.sh
 sudo ./arch_install.sh
 ```
 
-**注：还需要安装ngrok**
+## 用法
+
+```python
+python3 seeker.py -h
+
+usage: seeker.py [-h] [-s SUBDOMAIN]
+
+optional arguments:
+  -h, --help                              show this help message and exit
+  -s SUBDOMAIN, --subdomain Subdomain 	  Provide Subdomain for Serveo URL ( Optional )
+  -k KML, --kml KML                       Provide KML Filename ( Optional )
+  -t TUNNEL, --tunnel TUNNEL              Specify Tunnel Mode [manual]
+
+# Example
+
+# SERVEO 
+########
+python3 seeker.py
+
+# NGROK ETC.
+############
+
+# 手动启动
+python3 seeker.py -t manual
+
+# 在端口8080上启动Ngrok
+./ngrok http 8080
+
+#-----------------------------------#
+
+# Subdomain
+########### 
+python3 seeker.py --subdomain google
+python3 seeker.py --tunnel manual --subdomain zomato
+
+```
 
 ## 演示
 
-下面是在archlinux环境下的演示，其他环境除了安装时有些细微的区别，使用起来都一样
+下面是在arch环境下的演示，其他环境除了安装时有些细微的区别，使用起来都一样
+
+**这里采用手动启动的方式加ngrok**
 
 ### **安装**
 
+安装seeker
+
 ![image](https://cdn.jsdelivr.net/gh/chrysoskun/chrysoskun.github.io/assets/img/seeker/image01.png)
+
+安装ngrok
+
+```shell
+sudo pacman -S ngrok 
+```
 
 ### **使用**
 
-启动
+手动启动
 
 ```shell
 python3 seeker.py -t manual
@@ -143,11 +193,16 @@ ngrok http 8080
 
 **点开链接返回信息中有经纬度等信息，同时还有一个谷歌地图的链接，点击打开就是seeker获得的位置地点。**（手机定位精度很高，多次测试发现和手机app获得的位置很接近）
 
-## 伪装ngrok生成的链接
+### **视频演示**
 
-可以发现由ngrok生成的链接都是xxxxxxxx.ngrok.io格式,很容易就被一眼识破。
+1. [Seeker WhatsApp Template Demo | Accurately Locate Smartphones Using SE | thewhiteh4t](https://www.youtube.com/watch?v=dG0HkQmF4-A&feature=emb_logo)
+2. https://www.youtube.com/watch?v=FEyAPjkJFrk&feature=emb_logo
 
-所以可以用一些方法来改变这个链接
+## 伪装ngrok链接
+
+由ngrok生成的链接都是xxxxxxxx.ngrok.io格式，很容易就被一眼识破。
+
+所以可以用某些方法在一定程度上来伪装这个链接
 
 如使用[短网址生成网站](https://sina.lt/)
 
@@ -155,5 +210,6 @@ ngrok http 8080
 
 ![image](https://cdn.jsdelivr.net/gh/chrysoskun/chrysoskun.github.io/assets/img/seeker/image12.png)
 
-**seeker是一个概念验证工具，仅用于教育目的（重要的事情说三遍）**
+## 现存问题
 
+像Serveo和Ngrok这样的服务在一些国家是被禁止的，所以如果它在你的国家被禁止，你可能得不到一个网址，如果没有，那么首先要阅读已关闭的issues，如果你的问题没有列出，请在[这里](https://github.com/thewhiteh4t/seeker/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)提一个新的issue。
