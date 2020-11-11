@@ -1,9 +1,5 @@
 # seeker-install-and-demo
 
-
-
-
-
 - [原项目链接](https://github.com/thewhiteh4t/seeker)本文档由原项目翻译而来并做了部分修改。
 - seeker是一个概念验证工具，仅用于教育目的。
 
@@ -195,8 +191,8 @@ ngrok http 8080
 
 ### **原视频演示**
 
-1. [Seeker WhatsApp Template Demo | Accurately Locate Smartphones Using SE | thewhiteh4t](https://www.youtube.com/watch?v=dG0HkQmF4-A&feature=emb_logo)
-2. [What's New in seeker v1.1.9 | Accurately Locate Smartphones using Social Engineering | thewhiteh4t](https://www.youtube.com/watch?v=FEyAPjkJFrk&feature=emb_logo)
+1. [Seeker WhatsApp Template Demo](https://www.youtube.com/watch?v=dG0HkQmF4-A&feature=emb_logo)
+2. [What's New in seeker v1.1.9](https://www.youtube.com/watch?v=FEyAPjkJFrk&feature=emb_logo)
 
 ## 伪装ngrok链接
 
