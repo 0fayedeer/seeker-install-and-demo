@@ -194,7 +194,7 @@ ngrok http 8080
 1. [Seeker WhatsApp Template Demo](https://www.youtube.com/watch?v=dG0HkQmF4-A&feature=emb_logo)
 2. [What's New in seeker v1.1.9](https://www.youtube.com/watch?v=FEyAPjkJFrk&feature=emb_logo)
 
-## 伪装ngrok链接
+## 伪装
 
 由ngrok生成的链接都是xxxxxxxx.ngrok.io格式，很容易就被一眼识破。
 
